@@ -10,6 +10,14 @@
 		0E2CBB791E11D8EA001B5B56 /* Matrix.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E2CBB6F1E11D8EA001B5B56 /* Matrix.framework */; };
 		0E2CBB7E1E11D8EB001B5B56 /* MatrixTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2CBB7D1E11D8EB001B5B56 /* MatrixTests.swift */; };
 		0E2CBB801E11D8EB001B5B56 /* Matrix.h in Headers */ = {isa = PBXBuildFile; fileRef = 0E2CBB721E11D8EA001B5B56 /* Matrix.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		0E2CBB8C1E11DA25001B5B56 /* Package.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2CBB891E11DA25001B5B56 /* Package.swift */; };
+		0E2CBB8E1E11DA25001B5B56 /* Tests in Resources */ = {isa = PBXBuildFile; fileRef = 0E2CBB8B1E11DA25001B5B56 /* Tests */; };
+		0E2CBB911E11DD3F001B5B56 /* Matrix.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2CBB901E11DD3F001B5B56 /* Matrix.swift */; };
+		0E2CBB931E11DD43001B5B56 /* MatrixProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2CBB921E11DD43001B5B56 /* MatrixProtocol.swift */; };
+		0E2CBB951E11DD74001B5B56 /* MatrixErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2CBB941E11DD74001B5B56 /* MatrixErrors.swift */; };
+		0E2CBB991E11E0AB001B5B56 /* Vector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2CBB981E11E0AB001B5B56 /* Vector.swift */; };
+		0E2CBB9B1E11E0ED001B5B56 /* MatrixOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2CBB9A1E11E0ED001B5B56 /* MatrixOperators.swift */; };
+		0E2CBB9D1E11E4F0001B5B56 /* VectorOperators.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0E2CBB9C1E11E4F0001B5B56 /* VectorOperators.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +37,14 @@
 		0E2CBB781E11D8EA001B5B56 /* MatrixTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = MatrixTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0E2CBB7D1E11D8EB001B5B56 /* MatrixTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MatrixTests.swift; sourceTree = "<group>"; };
 		0E2CBB7F1E11D8EB001B5B56 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0E2CBB891E11DA25001B5B56 /* Package.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Package.swift; sourceTree = "<group>"; };
+		0E2CBB8B1E11DA25001B5B56 /* Tests */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Tests; sourceTree = "<group>"; };
+		0E2CBB901E11DD3F001B5B56 /* Matrix.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Matrix.swift; path = Sources/Matrix.swift; sourceTree = "<group>"; };
+		0E2CBB921E11DD43001B5B56 /* MatrixProtocol.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatrixProtocol.swift; path = Sources/MatrixProtocol.swift; sourceTree = "<group>"; };
+		0E2CBB941E11DD74001B5B56 /* MatrixErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatrixErrors.swift; path = Sources/MatrixErrors.swift; sourceTree = "<group>"; };
+		0E2CBB981E11E0AB001B5B56 /* Vector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Vector.swift; path = Sources/Vector.swift; sourceTree = "<group>"; };
+		0E2CBB9A1E11E0ED001B5B56 /* MatrixOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MatrixOperators.swift; path = Sources/MatrixOperators.swift; sourceTree = "<group>"; };
+		0E2CBB9C1E11E4F0001B5B56 /* VectorOperators.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = VectorOperators.swift; path = Sources/VectorOperators.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +69,9 @@
 		0E2CBB651E11D8EA001B5B56 = {
 			isa = PBXGroup;
 			children = (
+				0E2CBB891E11DA25001B5B56 /* Package.swift */,
+				0E2CBB8F1E11DD26001B5B56 /* Sources */,
+				0E2CBB8B1E11DA25001B5B56 /* Tests */,
 				0E2CBB711E11D8EA001B5B56 /* Matrix */,
 				0E2CBB7C1E11D8EB001B5B56 /* MatrixTests */,
 				0E2CBB701E11D8EA001B5B56 /* Products */,
@@ -84,6 +103,19 @@
 				0E2CBB7F1E11D8EB001B5B56 /* Info.plist */,
 			);
 			path = MatrixTests;
+			sourceTree = "<group>";
+		};
+		0E2CBB8F1E11DD26001B5B56 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				0E2CBB901E11DD3F001B5B56 /* Matrix.swift */,
+				0E2CBB941E11DD74001B5B56 /* MatrixErrors.swift */,
+				0E2CBB9A1E11E0ED001B5B56 /* MatrixOperators.swift */,
+				0E2CBB921E11DD43001B5B56 /* MatrixProtocol.swift */,
+				0E2CBB981E11E0AB001B5B56 /* Vector.swift */,
+				0E2CBB9C1E11E4F0001B5B56 /* VectorOperators.swift */,
+			);
+			name = Sources;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -149,6 +181,7 @@
 					0E2CBB6E1E11D8EA001B5B56 = {
 						CreatedOnToolsVersion = 8.2.1;
 						DevelopmentTeam = R5U4C8KFRC;
+						LastSwiftMigration = 0820;
 						ProvisioningStyle = Automatic;
 					};
 					0E2CBB771E11D8EA001B5B56 = {
@@ -181,6 +214,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2CBB8E1E11DA25001B5B56 /* Tests in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +232,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0E2CBB9D1E11E4F0001B5B56 /* VectorOperators.swift in Sources */,
+				0E2CBB931E11DD43001B5B56 /* MatrixProtocol.swift in Sources */,
+				0E2CBB911E11DD3F001B5B56 /* Matrix.swift in Sources */,
+				0E2CBB991E11E0AB001B5B56 /* Vector.swift in Sources */,
+				0E2CBB8C1E11DA25001B5B56 /* Package.swift in Sources */,
+				0E2CBB9B1E11E0ED001B5B56 /* MatrixOperators.swift in Sources */,
+				0E2CBB951E11DD74001B5B56 /* MatrixErrors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -322,6 +363,7 @@
 		0E2CBB841E11D8EB001B5B56 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R5U4C8KFRC;
@@ -334,6 +376,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = com.engideer.Matrix;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
@@ -341,6 +384,7 @@
 		0E2CBB851E11D8EB001B5B56 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "";
 				DEFINES_MODULE = YES;
 				DEVELOPMENT_TEAM = R5U4C8KFRC;
@@ -360,6 +404,7 @@
 		0E2CBB871E11D8EB001B5B56 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R5U4C8KFRC;
 				INFOPLIST_FILE = MatrixTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -372,6 +417,7 @@
 		0E2CBB881E11D8EB001B5B56 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				DEVELOPMENT_TEAM = R5U4C8KFRC;
 				INFOPLIST_FILE = MatrixTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
