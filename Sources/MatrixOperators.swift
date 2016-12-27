@@ -8,11 +8,14 @@
 
 import Foundation
 
+infix operator +*
+
 extension Matrix {
     
     // MARK: - Operators
     
-    public static func *(lhs: Matrix, rhs: Matrix) throws -> Matrix {
+    /// inner product
+    public static func +*(lhs: Matrix, rhs: Matrix) throws -> Matrix {
         guard lhs.shape.1 == rhs.shape.0 else {
             throw MatrixError.mismatchShapes(lhs.shape, rhs.shape)
         }
@@ -23,7 +26,7 @@ extension Matrix {
             var array: [Double] = []
             for columnIndex in 0..<columns {
                 let column = rhs.column(i: columnIndex)
-                try array.append(row * column)
+                try array.append(row +* column)
             }
             vectors.append(Vector(array))
         }

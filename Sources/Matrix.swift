@@ -66,5 +66,5 @@ public struct Matrix: MatrixProtocol {
         }
         return Vector(array)
     }
-    
+
 }

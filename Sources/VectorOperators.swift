@@ -8,11 +8,14 @@
 
 import Foundation
 
+infix operator +*
+
 extension Vector {
     
     // MARK: - Operators
     
-    public static func *(lhs: Vector, rhs: Vector) throws -> Double {
+    /// innner product
+    public static func +*(lhs: Vector, rhs: Vector) throws -> Double {
         guard lhs.shape == rhs.shape else {
             throw MatrixError.mismatchShapes(lhs.shape, rhs.shape)
         }
