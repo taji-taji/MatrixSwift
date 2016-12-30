@@ -4,16 +4,12 @@ public struct Matrix: MatrixProtocol {
     
     public typealias VectorArray = Array<Double>
     
-    /////////////////////////////
-    //
+    
     // MARK: - Properties
-    //
-    /////////////////////////////
     
     public var rows: Int { return vectors.count }
     public var columns: Int { return vectors.first?.count ?? 0 }
     public var count: Int { return rows * columns }
-    public var shape: (Int, Int) { return (rows, columns) }
     public var vectors: [Vector] = []
     
     public var description: String {
@@ -24,11 +20,7 @@ public struct Matrix: MatrixProtocol {
     }
     
     
-    /////////////////////////////
-    //
     // MARK: - Initializer
-    //
-    /////////////////////////////
     
     public init(vectors: [Vector]) throws {
         self.vectors = vectors
@@ -50,6 +42,16 @@ public struct Matrix: MatrixProtocol {
         }
     }
     
+    public init(shape: (rows: Int, columns: Int)) {
+        self.vectors = (0..<rows).map { (i) -> Vector in
+            var array = Array<Double>(repeating: 0, count: columns)
+            array[i] = 1
+            return Vector(array)
+        }
+    }
+    
+    // MARK: - Subscripts
+    
     public subscript(row: Int) -> Vector {
         get {
             return vectors[row]
@@ -59,10 +61,13 @@ public struct Matrix: MatrixProtocol {
         }
     }
     
+    
+    // MARK: - Methods
+    
     public func column(i: Int) -> Vector {
         var array: [Double] = []
         for row in 0..<rows {
-            array.append(vectors[row].array[i])
+            array.append(vectors[row][i])
         }
         return Vector(array)
     }

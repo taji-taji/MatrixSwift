@@ -14,3 +14,7 @@ public protocol MatrixProtocol: CustomStringConvertible {
     var count: Int { get }
     var shape: (Int, Int) { get }
 }
+
+public extension MatrixProtocol {
+    public var shape: (Int, Int) { return (rows, columns) }
+}

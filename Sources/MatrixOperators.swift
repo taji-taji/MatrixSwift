@@ -21,7 +21,7 @@ extension Matrix {
         }
         var vectors: [Vector] = []
         for rowIndex in 0..<lhs.rows {
-            let row = lhs.vectors[rowIndex]
+            let row = lhs[rowIndex]
             let columns = rhs.columns
             var array: [Double] = []
             for columnIndex in 0..<columns {
@@ -37,10 +37,9 @@ extension Matrix {
         guard lhs.shape == rhs.shape else {
             throw MatrixError.mismatchShapes(lhs.shape, rhs.shape)
         }
-        var vectors: [Vector] = []
-        for i in 0..<lhs.rows {
-            try vectors.append(lhs.vectors[i] + rhs.vectors[i])
-        }
+        let vectors: [Vector] = try (0..<lhs.rows).map({ (i) -> Vector in
+            return try lhs[i] + rhs[i]
+        })
         return try Matrix(vectors: vectors)
     }
     
@@ -48,11 +47,21 @@ extension Matrix {
         guard lhs.shape == rhs.shape else {
             throw MatrixError.mismatchShapes(lhs.shape, rhs.shape)
         }
-        var vectors: [Vector] = []
-        for i in 0..<lhs.rows {
-            try vectors.append(lhs.vectors[i] - rhs.vectors[i])
-        }
+        let vectors: [Vector] = try (0..<lhs.rows).map({ (i) -> Vector in
+            return try lhs[i] - rhs[i]
+        })
         return try Matrix(vectors: vectors)
+    }
+    
+    public static func *(lhs: Double, rhs: Matrix) throws -> Matrix {
+        let vectors: [Vector] = (0..<rhs.rows).map({ (i) -> Vector in
+            return lhs * rhs[i]
+        })
+        return try Matrix(vectors: vectors)
+    }
+    
+    public static func /(lhs: Matrix, rhs: Double) throws -> Matrix {
+        return try (1 / rhs) * lhs
     }
     
 }

@@ -22,7 +22,7 @@ extension Vector {
         let count = lhs.count
         var result: Double = 0
         for i in 0..<count {
-            result += lhs.array[i] * rhs.array[i]
+            result += lhs[i] * rhs[i]
         }
         return result
     }
@@ -31,10 +31,9 @@ extension Vector {
         guard lhs.shape == rhs.shape else {
             throw MatrixError.mismatchShapes(lhs.shape, rhs.shape)
         }
-        var array: [Double] = []
-        for i in 0..<lhs.count {
-            array.append(lhs[i] + rhs[i])
-        }
+        let array: [Double] = (0..<lhs.count).map({ (i) -> Double in
+            return lhs[i] + rhs[i]
+        })
         return Vector(array)
     }
     
@@ -42,10 +41,16 @@ extension Vector {
         guard lhs.shape == rhs.shape else {
             throw MatrixError.mismatchShapes(lhs.shape, rhs.shape)
         }
-        var array: [Double] = []
-        for i in 0..<lhs.count {
-            array.append(lhs[i] - rhs[i])
-        }
+        let array: [Double] = (0..<lhs.count).map({ (i) -> Double in
+            return lhs[i] - rhs[i]
+        })
+        return Vector(array)
+    }
+    
+    public static func *(lhs: Double, rhs: Vector) -> Vector {
+        let array: [Double] = (0..<rhs.count).map({ (i) -> Double in
+            return lhs * rhs[i]
+        })
         return Vector(array)
     }
     

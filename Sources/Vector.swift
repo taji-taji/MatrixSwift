@@ -9,10 +9,9 @@
 import Foundation
 
 public struct Vector: MatrixProtocol {
-    public var rows: Int { return 0 }
+    public var rows: Int { return 1 }
     public var columns: Int { return array.count }
     public var count: Int { return columns }
-    public var shape: (Int, Int) { return (1, 0) }
     public var array: [Double] = []
     
     public var description: String {
